@@ -1,0 +1,21 @@
+{
+  "name": "devx",
+  "version": "1.0.0",
+  "description": "devx for developer",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "react",
+    "js"
+  ],
+  "author": "rajesh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
