@@ -1,4 +1,5 @@
 - mongodb+srv://rajesh:smartrabbit@devx.bdixn.mongodb.net/
+  //- mongodb+srv://rajesh:smartrabbit@devx.bdixn.mongodb.net/
 - Create a repository
 - Initialize the repository
 - node_modules, package.json, package-lock.json
