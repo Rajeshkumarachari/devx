@@ -1,8 +1,11 @@
 const express = require("express");
 const app = express();
+const { adminAuth, userAuth } = require("./middleware/auth.js");
 
-app.use("/test", (req, res) => {
-  res.send("Hello from server!");
+app.use("/admin", adminAuth);
+
+app.get("/user", userAuth, (req, res) => {
+  res.send("User data sent");
 });
 
 app.listen(7777, () => {
