@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const validator = require("validator");
 
 const userSchema = new mongoose.Schema(
   {
@@ -20,12 +21,19 @@ const userSchema = new mongoose.Schema(
       lowercase: true,
       unique: true,
       trim: true,
+      validate(value) {
+        if (!validator.isEmail(value)) throw new Error("Invalid email address");
+      },
     },
     password: {
       type: String,
       required: true,
       trim: true,
-      minLength: 8,
+      validate(value) {
+        if (!validator.isStrongPassword(value)) {
+          throw new Error("Please enter a strong password");
+        }
+      },
     },
     age: {
       type: Number,
@@ -45,6 +53,11 @@ const userSchema = new mongoose.Schema(
       type: String,
       trim: true,
       default: "https://geographyandyou.com/images/user-profile.png",
+      validate(value) {
+        if (!validator.isURL(value)) {
+          throw new Error("Invalid photo url address");
+        }
+      },
     },
     about: { type: String, default: "This is a default about of the user...!" },
     skills: {
