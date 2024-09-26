@@ -4,6 +4,7 @@ const app = express();
 const User = require("./models/user");
 const { validateSignupData } = require("./utils/validation");
 const bcrypt = require("bcrypt");
+const user = require("./models/user");
 
 app.use(express.json());
 
